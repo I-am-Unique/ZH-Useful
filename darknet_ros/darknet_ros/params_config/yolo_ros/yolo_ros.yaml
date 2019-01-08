@@ -1,0 +1,17 @@
+ros:
+  image_sub_name: /pylon_camera_1/pylon_camera_node/image_raw/compressed
+
+yolo:
+
+  threshold:
+    value: 0.5
+
+  detection_classes:
+    names:
+      - person
+      - bicycle
+      - car
+      - motorbike
+      - bus
+      - truck
+
