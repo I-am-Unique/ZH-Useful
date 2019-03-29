@@ -7,7 +7,32 @@
  *平移向量（3X1）:Eigen::Vector3d
  *变换矩阵（4X4）:Eigen::Isometry3d
  */
+//PCL激光点云 的一些操作
+#include <opencv2/opencv.hpp>
+#include <ros/ros.h>
+#include <pcl/point_cloud.h>
+#include <pcl/point_types.h>
+#include <pcl/PCLPointCloud2.h>
+#include <pcl/common/transforms.h>
+#include <pcl/console/time.h>
+#include <pcl/segmentation/organized_connected_component_segmentation.h>
+#include <pcl/search/octree.h>
+#include <pcl/search/kdtree.h>
+#include <pcl/sample_consensus/ransac.h>
+#include <pcl/sample_consensus/sac_model_plane.h>
+#include <pcl/sample_consensus/sac_model_sphere.h>
+#include <pcl/sample_consensus/method_types.h>
+#include <pcl/sample_consensus/model_types.h>
+#include <pcl/segmentation/extract_clusters.h>
+#include <pcl/segmentation/sac_segmentation.h>
+#include <pcl_ros/point_cloud.h>
+#include <pcl/kdtree/kdtree.h>
 
+
+typedef pcl::PointXYZ PointType;
+typedef pcl::PointCloud<PointType> PointCloud;
+typedef pcl::PointCloud<PointType>::Ptr PointCloudPtr;
+typedef pcl::PointCloud<PointType>::ConstPtr PointCloudConstPtr;
 
 
 
