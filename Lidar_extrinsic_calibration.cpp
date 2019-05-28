@@ -107,7 +107,7 @@ int main(int argc, char *argv[])
 
 	Eigen::Translation3f init_translation(tx, ty, tz);
 
-	Eigen::Matrix4f init_guess = //此处　init_translation　可以放在最前面乘，也可以放在最后面乘，不影响结果；
+	Eigen::Matrix4f init_guess = //此处　init_translation　必须放在最前面乘，必须必须；
 	      (init_translation * init_rotation_x * init_rotation_y * init_rotation_z).matrix();//此处统一欧拉角旋转顺序XYZ(roll-pitch-yaw)
 	transform_1 = init_guess;
 	std::cout << "1:" << std::endl << transform_1.matrix() << std::endl;
